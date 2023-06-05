@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import data from './data';
 import Search from './Search';
+import data from './data';
 import WeatherDetails from './WeatherDetails';
 import images from './image-data';
 
