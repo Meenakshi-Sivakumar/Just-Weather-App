@@ -6,6 +6,10 @@ const Search = ({ handleCityUpdate }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if(cityInput === '') {
+      alert("error");
+      return;
+    }
     handleCityUpdate(cityInput);
     setCityInput('');
   }
@@ -20,7 +24,7 @@ const Search = ({ handleCityUpdate }) => {
             value={cityInput}
             onChange={(e) => setCityInput(e.target.value)}
           />
-          <button type="submit"><BsSearch /></button>
+          <button type="submit"><BsSearch className="react-search-icon"/></button>
         </form>
       </div>
       <ul className="popular-cities-list">
@@ -29,6 +33,7 @@ const Search = ({ handleCityUpdate }) => {
         <li><button onClick={() => handleCityUpdate('Chennai')}>Chennai</button></li>
         <li><button onClick={() => handleCityUpdate('London')}>London</button></li>
       </ul>
+      <div className="divider"></div>
     </div>
   );
 }
