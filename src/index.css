@@ -125,8 +125,8 @@ p {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -180,10 +180,7 @@ button {
   justify-content: space-between;
 }
 .popular-cities-list {
-  margin: 7% 0;
-}
-.popular-cities-list button {
-  margin: 2% 0;
+  margin: 1.5rem 0;
 }
 input {
   border: none;
@@ -212,18 +209,14 @@ input {
   width: 5rem;
   background-color: rgba(229, 241, 252, 0.9);
 }
-.weather-details-flex {
-  margin : 2% 0;
-}
 .weather-details-flex h3 {
   font-size: large;
   color: rgb(223, 223, 223);
   letter-spacing: 0.5px;
   font-weight: 600;
-  margin: 0;
 }
 .weather-details-sub {
-  margin: 7% auto;
+  margin: 1rem auto;
 }
 
 /* main-banner */
@@ -273,4 +266,92 @@ input {
 .weather-icon {
   width: auto;
   height: auto;
+}
+
+/* 
+=================
+Mobile responsive
+=================
+ */
+
+@media screen and (max-width: 800px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    height: auto;
+  }
+  .side-panel {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+  .weather-details {
+    text-align: center;
+  }
+  .weather-details-flex {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .weather-details-flex h3 {
+    margin-top: 0;
+    margin: 0 auto;
+    font-size: 16px;
+    letter-spacing: 4px;
+  }
+
+  .search-box {
+    margin-bottom: 2rem;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .search-box input {
+    padding-left: 3% ;
+    width: 75%;
+    margin-top: 1rem;
+  }
+  .search-box button {
+    height: 4rem;
+    width: 20%;
+  }
+
+  .popular-cities-list {
+    display:none;
+  }
+
+  .hero-weather-details {
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .large-temperature h1 {
+    font-size: 400%;
+  }
+
+  .location-time {
+    width: 100%;
+    text-align: center;
+  }
+
+  .location-time h3 {
+    font-size: 36px;
+    margin-top: 1rem;
+  }
+
+  .location-time p {
+    font-size: 18px;
+  }
+
+  .weather-desc p {
+    font-size: 18px;
+    margin-top: 1rem;
+  }
 }
