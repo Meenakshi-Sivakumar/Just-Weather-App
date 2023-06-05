@@ -131,6 +131,11 @@ p {
   background-size: cover;
   display: flex;
   justify-content: space-between;
+  align-items: end;
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--clr-grey-8);
@@ -148,6 +153,7 @@ p {
 /*  Side Panel */
 
 .side-panel {
+  height: 100%;
   width: 35%;
   padding: 0 2rem;
   line-height: 3rem;
@@ -211,4 +217,53 @@ input {
 }
 .weather-details-sub {
   margin: 1rem auto;
+}
+
+/* main-banner */
+
+.hero-weather-details {
+  width: auto;
+  height: 20%;
+  color: white;
+  margin: 8%;
+  display: flex;
+  align-items: end;
+}
+.hero-weather-details p {
+  color: white;
+}
+.large-temperature h1{
+  font-size: 1000%;
+  font-weight: 600;
+}
+.location-time {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 0 2rem;
+}
+.location-time h3 {
+  font-size: 54px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+.location-time p {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.weather-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather-icon p {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-align: center;
+}
+.react-icon {
+  width: 30%;
+  height: 30%;
 }
