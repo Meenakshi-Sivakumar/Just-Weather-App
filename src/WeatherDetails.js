@@ -6,6 +6,7 @@ const WeatherDetails = ({weatherData}) => {
           <div className='weather-details-flex'>
             <h3>Weather Details</h3>
           </div>
+          <div className="weather-details-sub">
           {weatherData.clouds && (
             <div className='weather-details-flex'>
               <h4>Cloudy</h4>
@@ -30,6 +31,8 @@ const WeatherDetails = ({weatherData}) => {
               <p>{weatherData.main.feels_like}°C</p>
             </div>
           )}
+          </div>
+          <div className="divider"></div>
         </div>
     );
 }
