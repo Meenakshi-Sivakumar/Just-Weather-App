@@ -19,8 +19,6 @@ const options = {
 const formattedDate = currentDate.toLocaleString('en-US', options);
 const formattedTemplate = `${formattedDate}`
 
-
-
 function App() {
   const [image, setImage] = useState(images[0]);
   const [city, setCity] = useState('Salem');
@@ -31,7 +29,7 @@ function App() {
       const currentIndex = images.indexOf(image);
       const nextIndex = (currentIndex + 1) % images.length;
       setImage(images[nextIndex]);
-    }, 8000);
+    }, 6000);
 
     return () => {
       clearTimeout(timer); 
