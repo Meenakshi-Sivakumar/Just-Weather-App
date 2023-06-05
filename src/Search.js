@@ -7,7 +7,7 @@ const Search = ({ handleCityUpdate }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if(cityInput === '') {
-      alert("error");
+      alert("enter a city name");
       return;
     }
     handleCityUpdate(cityInput);

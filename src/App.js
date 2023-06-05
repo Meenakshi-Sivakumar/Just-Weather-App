@@ -45,10 +45,17 @@ function App() {
 
     try {
       const response = await fetch(url);
+
+      if (response.status === 404) {
+        alert("check your spelling");
+        return;
+      }
+  
       const data = await response.json();
       setWeatherData(data);
     } catch (error) {
-      console.error(`Error retrieving weather data: ${error}`);
+      console.log(`Error retrieving weather data: ${error}`);
+      
     }
   }
 
