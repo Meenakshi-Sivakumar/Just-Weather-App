@@ -22,7 +22,7 @@ const formattedTemplate = `${formattedDate}`
 
 
 function App() {
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState('https://images.unsplash.com/photo-1498354136128-58f790194fa7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
   const [city, setCity] = useState('Salem');
   const [weatherData, setWeatherData] = useState(data);
 
@@ -48,13 +48,9 @@ function App() {
   console.log(weatherData)
   return (
     <div className='main-container' style={{ backgroundImage: `url(${image})` }}>
-      <div className='content-block'>
-        <Search handleCityUpdate={handleCityUpdate} />
-        <WeatherDetails weatherData={weatherData} />
-      </div>
       <div className='hero-weather-details'>
       <div className='large-temperature'>
-      <h1>{weatherData.main.temp}</h1>
+      <h1>{weatherData.main.temp}°</h1>
       </div>
       <div className='location-time'>
       <h3>{weatherData.name}</h3>
@@ -63,6 +59,10 @@ function App() {
       <div className='weather-icon'>
       <p>{weatherData.weather[0].description}</p>
       </div>
+      </div>
+      <div className='side-panel'>
+        <Search handleCityUpdate={handleCityUpdate} />
+        <WeatherDetails weatherData={weatherData} />
       </div>
     </div>
   );
