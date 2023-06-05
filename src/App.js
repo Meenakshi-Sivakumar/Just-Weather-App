@@ -3,6 +3,8 @@ import data from './data';
 import Loading from './Loading';
 import Search from './Search';
 import WeatherDetails from './WeatherDetails';
+import images from './image-data';
+import { TiWeatherCloudy } from "react-icons/ti";
 
 const apiKey = '71acb43b5585168d990ac95d8210debd';
 const currentDate = new Date();
@@ -22,9 +24,21 @@ const formattedTemplate = `${formattedDate}`
 
 
 function App() {
-  const [image, setImage] = useState('https://images.unsplash.com/photo-1498354136128-58f790194fa7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+  const [image, setImage] = useState(images[0]);
   const [city, setCity] = useState('Salem');
   const [weatherData, setWeatherData] = useState(data);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const currentIndex = images.indexOf(image);
+      const nextIndex = (currentIndex + 1) % images.length;
+      setImage(images[nextIndex]);
+    }, 8000);
+
+    return () => {
+      clearTimeout(timer); 
+    };
+  }, [image, images]);
 
   async function api_call(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -50,13 +64,14 @@ function App() {
     <div className='main-container' style={{ backgroundImage: `url(${image})` }}>
       <div className='hero-weather-details'>
       <div className='large-temperature'>
-      <h1>{weatherData.main.temp}°</h1>
+      <h1>{Math.floor(weatherData.main.temp)}°</h1>
       </div>
       <div className='location-time'>
       <h3>{weatherData.name}</h3>
       <p>{formattedTemplate}</p>
       </div>
       <div className='weather-icon'>
+      <TiWeatherCloudy className='react-icon'/>
       <p>{weatherData.weather[0].description}</p>
       </div>
       </div>
