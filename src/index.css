@@ -132,10 +132,10 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
+  -webkit-transition: background-image 2s ease-in-out;
+  -moz-transition: background-image 2s ease-in-out;
+  -o-transition: background-image 2s ease-in-out;
+  transition: background-image 2s ease-in-out;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--clr-grey-8);
@@ -180,7 +180,10 @@ button {
   justify-content: space-between;
 }
 .popular-cities-list {
-  margin: 1.5rem 0;
+  margin: 7% 0;
+}
+.popular-cities-list button {
+  margin: 2% 0;
 }
 input {
   border: none;
@@ -209,14 +212,18 @@ input {
   width: 5rem;
   background-color: rgba(229, 241, 252, 0.9);
 }
+.weather-details-flex {
+  margin : 2% 0;
+}
 .weather-details-flex h3 {
   font-size: large;
   color: rgb(223, 223, 223);
   letter-spacing: 0.5px;
   font-weight: 600;
+  margin: 0;
 }
 .weather-details-sub {
-  margin: 1rem auto;
+  margin: 7% auto;
 }
 
 /* main-banner */
@@ -252,18 +259,18 @@ input {
   font-weight: 600;
   letter-spacing: 0;
 }
-.weather-icon {
+.weather-desc {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.weather-icon p {
+.weather-desc p {
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 0;
   text-align: center;
 }
-.react-icon {
-  width: 30%;
-  height: 30%;
+.weather-icon {
+  width: auto;
+  height: auto;
 }

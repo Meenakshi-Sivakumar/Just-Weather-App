@@ -70,8 +70,8 @@ function App() {
       <h3>{weatherData.name}</h3>
       <p>{formattedTemplate}</p>
       </div>
-      <div className='weather-icon'>
-      <TiWeatherCloudy className='react-icon'/>
+      <div className='weather-desc'>
+      <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt='weather-icon' className='weather-icon'/>
       <p>{weatherData.weather[0].description}</p>
       </div>
       </div>
