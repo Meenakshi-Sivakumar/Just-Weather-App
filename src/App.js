@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import data from './data';
-import Loading from './Loading';
 import Search from './Search';
 import WeatherDetails from './WeatherDetails';
 import images from './image-data';
-import { TiWeatherCloudy } from "react-icons/ti";
 
 const apiKey = '71acb43b5585168d990ac95d8210debd';
 const currentDate = new Date();
@@ -38,7 +36,7 @@ function App() {
     return () => {
       clearTimeout(timer); 
     };
-  }, [image, images]);
+  }, [image]);
 
   async function api_call(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
