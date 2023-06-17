@@ -64,7 +64,7 @@ function App() {
   }
   console.log(weatherData)
   return (
-    <div className='main-container' style={{ background: 'pink' }} /*style={{ backgroundImage: `url(${image})` }}*/>
+    <div className='main-container'  style={{ backgroundImage: `url(${image})` }}>
       <div className='hero-weather-details'>
       <div className='large-temperature'>
       <h1>{Math.floor(weatherData.main.temp)}°</h1>
